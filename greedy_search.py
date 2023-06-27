@@ -36,5 +36,19 @@ def log_probs_from_logits(logits, labels):
     logp = F.log_softmax(logits, dim=-1)
     logp_label = torch.gather(logp, 2, labels.unsqueeze(2)).squeeze(-1)
     return logp_label
+
+def sequence_logprob(model, labels, input_len=0):
+    with torch.no_grad():
+        output = model(labels)
+        log_probs = log_probs_from_logits(
+        output.logits[:, :-1, :], labels[:, 1:])
+        seq_log_prob = torch.sum(log_probs[:, input_len:])
+        return seq_log_prob.cpu().numpy()
+    
+output_beam = model.generate(input_ids, max_length=1024, num_beams=5,
+do_sample=False)
+logp = sequence_logprob(model, output_beam, input_len=len(input_ids[0]))
+print(tokenizer.decode(output_beam[0]))
+print(f"\nlog-prob: {logp:.2f}")
 dara=pd.DataFrame(iterations)
 print(dara)
