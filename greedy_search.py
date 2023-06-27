@@ -1,4 +1,5 @@
 import torch
+import torch.nn.functional as F
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForCausalLM
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -30,5 +31,10 @@ with torch.no_grad():
             # Append predicted next token to input
         input_ids = torch.cat([input_ids, sorted_ids[None, 0, None]], dim=-1)
         iterations.append(iteration)
+        
+def log_probs_from_logits(logits, labels):
+    logp = F.log_softmax(logits, dim=-1)
+    logp_label = torch.gather(logp, 2, labels.unsqueeze(2)).squeeze(-1)
+    return logp_label
 dara=pd.DataFrame(iterations)
 print(dara)
