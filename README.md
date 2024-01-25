@@ -4,12 +4,6 @@
 
 This project demonstrates the use of a Transformer architecture for emotion analysis. The Transformer model is fine-tuned on an emotion dataset, and the hidden states are extracted for downstream tasks such as logistic regression and evaluation using a dummy classifier.
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.6 or later
-- Install required packages: `pip install -r requirements.txt`
 
 ### Example Usage
 
