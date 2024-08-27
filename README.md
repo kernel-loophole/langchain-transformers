@@ -22,3 +22,7 @@ https://github.com/kernel-loophole/langchain-transformers/blob/main/tensors/Broa
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://github.com/kernel-loophole/langchain-transformers/blob/main/tensors/hot_probelm.ipynb) 
 tempature hot probelm using pytorch
+
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/kernel-loophole/langchain-transformers/blob/main/tensors/tensors_intro.ipynb) 
+Basic tensor using pytorch
