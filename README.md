@@ -16,4 +16,9 @@ https://github.com/kernel-loophole/langchain-transformers/blob/main/tensors/2_bi
 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
-https://github.com/kernel-loophole/langchain-transformers/blob/main/tensors/Broadcasting_in_torch.ipynb) Tesnor broadcasting ,core of matrix multiplication
+https://github.com/kernel-loophole/langchain-transformers/blob/main/tensors/Broadcasting_in_torch.ipynb) Tensor broadcasting ,core of matrix multiplication
+
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://github.com/kernel-loophole/langchain-transformers/blob/main/tensors/hot_probelm.ipynb) 
+tempature hot probelm using pytorch
